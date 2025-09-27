@@ -18,7 +18,7 @@ NC='\033[0m'
 
 # Configuration
 HELMSTACK_VERSION="latest"
-GITHUB_REPO="https://github.com/USERNAME/helmstack"
+GITHUB_REPO="https://github.com/helmstack/helmstack"
 INSTALL_DIR="$HOME/.helmstack"
 BIN_DIR="$HOME/.local/bin"
 
@@ -122,21 +122,18 @@ install_packages() {
 
     echo -e "${BLUE}📦 Downloading packages...${NC}"
 
-    # In a real GitHub setup, these would be:
-    # npm install -g @helmstack/schemas @helmstack/core @helmstack/addons helmstack
-
-    # For now, using local packages (this would be replaced with actual npm packages)
+    # Install from npm packages
     print_step "Installing @helmstack/schemas..."
-    npm install -g /home/oem/Documents/Projects/PersonalUse/Tools/helmstack/helmstack-schemas
+    npm install -g @helmstack/schemas
 
     print_step "Installing @helmstack/core..."
-    npm install -g /home/oem/Documents/Projects/PersonalUse/Tools/helmstack/helmstack-core
+    npm install -g @helmstack/core
 
     print_step "Installing @helmstack/addons..."
-    npm install -g /home/oem/Documents/Projects/PersonalUse/Tools/helmstack/helmstack-addons
+    npm install -g @helmstack/addons
 
     print_step "Installing helmstack CLI..."
-    npm install -g /home/oem/Documents/Projects/PersonalUse/Tools/helmstack/helmstack-cli
+    npm install -g helmstack
 
     # Cleanup
     cd /
